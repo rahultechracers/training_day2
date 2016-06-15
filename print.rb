@@ -1,4 +1,4 @@
-class printer
+class Printer
   def initialize(detailed_tax)
     @item=detailed_tax[0]
     @tax=detailed_tax[1]

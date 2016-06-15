@@ -1,7 +1,7 @@
-require '../sales_tax.rb'
-require '../import_tax.rb'
+require './sales_tax.rb'
+require './import_tax.rb'
 
-class calculate_tax
+class Calculate_tax
   def initialize(item_list)
     @item_list=item_list
     @total_tax=0
@@ -10,17 +10,21 @@ class calculate_tax
   end
 
   def tax_calculation
-      sales_tax=sales_tax.new
-      import_duty=import_tax.new
+      sales_tax=Sales_tax.new
+      import_duty=Import_tax.new
+    
       @item_list.each do |item|
-      item=item.split(" ")
-      itme_cost=item[item.length-1].to_f
-      temp=sales_tax.sales_tax(item)+import_duty.import_tax(item)
-      total_cost=(item_cost+temp).round(2)
-      @total_tax+=temp
-      @total+=total_cost
-      item.gsub!("#{item_cost}","#{total_cost}")
-      @final_list.push(item)
-   return @final_list,@total_tax.round(2), @total.round(2)   
+        item=item.split(" ")
+        item_cost=item[item.length-1].to_f
+        temp=sales_tax.salestax(item)+import_duty.importduty(item)
+        total_cost=(item_cost+temp).round(2)
+        @total_tax+=temp
+
+        @total_amount+=total_cost
+        item=item.join(" ")
+        item.gsub!("#{item_cost}","#{total_cost}")
+        @final_list.push(item)
+      end
+   return @final_list,@total_tax.round(2), @total_amount.round(2)   
   end 
 end 

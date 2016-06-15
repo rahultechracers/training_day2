@@ -1,19 +1,13 @@
 # input class is used to process input file and tokenize input in to array
-class input
+class Input
     def initialize(filename)
-    
-      @item=tokenize(filename)
-      @item_to_exclude=hash_exclusion(tokenize(exclusion.txt))
+      @filename= filename
+      @item=Array.new
     end
-    def tokenize(filename)
-      file_address=Dir.getwd+'input'+filename
-      input=FIle.open(file_address).
-      content=input.each {|line| content<<line}
-    end
-    def hash_exclusion(arr)
-       temp=Hash.new(0)
-       arr.each do 
-        { |x| temp[x]=1}
-       end
+    def tokenize
+      file_address=Dir.getwd+'/input/'+@filename
+      input_file=File.open(file_address)
+      input_file.each {|line| @item<<line}
+      return @item
     end
 end

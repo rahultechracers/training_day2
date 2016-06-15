@@ -1,16 +1,17 @@
-class import_tax
-  def initialize(item)
-    @item=item
-    @tax=5
-  end
+class Import_tax
+  def importduty(item)
+    
+      tax=5 
+      item_split=item
+      if item_split.include?("imported")
+        item_cost=item_split[item_split.length-1].to_f
+        tax=(item_cost*tax)/100
+        tax.round(2)
+        return tax
 
-  def import_duty(item)
-    {
-      item_split=item.split(" ")
-      if item.split.downcase.include("imported")
-        item_cost=item_split[item_split.lenght-1].to_f
-        tax
       else
         return 0
       end
-    }
+  end
+end
+    
