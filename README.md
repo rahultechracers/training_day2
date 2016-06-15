@@ -6,7 +6,7 @@ input1.txt, input2.txt, input3.txt : these are the input files
 
 tax_calc.rb : This is tax calculator file, Run this file file to calculate tax of input data This file invokes the input.rb file to take the input  filename from user
 
-input.rb : this file u is used for taking input filename from user
+input.rb : this file is used for taking input filename from user
 
 calculate_tax.rb : This file is invoked in tac_calc after taking input from user and it call function to calcualte sales tax and import duty
 
