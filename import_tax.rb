@@ -1,6 +1,5 @@
-class Import_tax
+class ImportTax
   def importduty(item)
-    
       tax=5 
       item_split=item
       if item_split.include?("imported")
