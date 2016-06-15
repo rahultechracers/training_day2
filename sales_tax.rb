@@ -1,4 +1,4 @@
-class Sales_tax
+class SalesTax
   def salestax(item)
      tax=10
      item_array=item
@@ -11,8 +11,8 @@ class Sales_tax
           break
         end
       end
-          tax=(item_cost*10)/100
-          tax.round(2)
-          return tax
+    tax=(item_cost*10)/100
+    tax.round(2)
+    return tax
   end
 end 
